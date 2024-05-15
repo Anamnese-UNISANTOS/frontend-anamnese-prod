@@ -24,6 +24,7 @@ function listarUsuarios() {
         .then(data => {
             data.forEach(usuario => {
                 const itemTabela = document.createElement('tr');
+                itemTabela.classList.add("itemTabela");
                 itemTabela.id = usuario.id;
                 tbody.appendChild(itemTabela);
                 const colunaID = document.createElement('th');
@@ -45,6 +46,13 @@ function listarUsuarios() {
                 colunaAt.textContent = dataFormatada;
                 itemTabela.appendChild(colunaAt);
             });
+            let itensTabela = document.querySelectorAll(".itemTabela");
+            itensTabela.forEach((usuario) => {
+                usuario.addEventListener("click", () => {
+                    localStorage.setItem("usuarioId", usuario.id);
+                    window.location.href = "usuario.html";
+                })
+            })
         })
         .catch(error => {
             console.error(error);

@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Formulário</title>
+    <link rel="stylesheet" href="./css/singleItem.css">
     <link rel="stylesheet" href="./css/add-formulario.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <script src="./js/add-formulario.js" defer></script>
     <script src="./js/globalScript.js" defer></script>
+    <script src="./js/addFormulario.js" defer></script>
     <script src="./js/bootstrap.js" defer></script>
 </head>
 
@@ -18,7 +19,8 @@
         <div class="div-header">
             <span id="headerUserName"></span>
             <span>|</span>
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon" class="clickable">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon"
+                class="clickable">
                 <path fill="#0079BF"
                     d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z">
                 </path>
@@ -45,75 +47,88 @@
             <form id="regForm" class="formAddForms needs-validation" novalidate>
 
                 <div class="tab">
+                    <h2 class="h5 titulo-etapas">Seção 1</h2>
                     <div class="mb-3">
-                        <label for="nome" class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" id="nome" required>
-                        <div class="invalid-feedback">Campo obrigatório.</div>
-                    </div>        
+                        <label for="selectPacientes" class="form-label">Paciente</label>
+                        <select class="form-select" required aria-label="paciente-select" id="selectPacientes">
+                            <option selected disabled value="">Selecione o paciente</option>
+                        </select>
+                        <div class="invalid-feedback">Selecione uma opção válida.</div>
+                    </div>
                     <div class="mb-3">
-                        <label for="idade" class="form-label">Idade</label>
-                        <input type="text" class="form-control" id="idade" required>
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
                         <div class="invalid-feedback">Campo obrigatório.</div>
-                    </div>        
+                    </div>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
                 </div>
-                
-                <div class="tab">Birthday:
-                  <p><input placeholder="dd"></p>
-                  <p><input placeholder="mm"></p>
-                  <p><input placeholder="yyyy"></p>
+
+                <div class="tab">
+                    <h2 class="h5 titulo-etapas">Seção 2</h2>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
                 </div>
-                
-                <div class="tab">Login Info:
-                  <p><input placeholder="Username..."></p>
-                  <p><input placeholder="Password..."></p>
+
+                <div class="tab">
+                    <h2 class="h5 titulo-etapas">Seção 3</h2>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pergunta" class="form-label">Pergunta</label>
+                        <input type="text" class="form-control" id="pergunta" required>
+                        <div class="invalid-feedback">Campo obrigatório.</div>
+                    </div>
                 </div>
-                
+
                 <div style="overflow:auto;">
-                  <div style="float:right;">
-                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                  </div>
+                    <div style="float:right;">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    </div>
                 </div>
-                
+
                 <!-- Circles which indicates the steps of the form: -->
                 <div style="text-align:center;margin-top:40px;">
-                  <span class="step"></span>
-                  <span class="step"></span>
-                  <span class="step"></span>
-                  <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
                 </div>
-                
-                </form>
+
+            </form>
         </div>
     </div>
 
-    <div class="modal fade" id="usuarioModal" tabindex="-1" aria-labelledby="usuarioModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="usuarioModalLabel">Dados de João</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Nova Senha</label>
-                            <input type="password" class="form-control" id="newpass">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Confirmar Nova Senha</label>
-                            <input type="password" class="form-control" id="cnewpass">
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="div-modal-footer">
-                        <button type="submit" class="btn btn-primary">Atualizar</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

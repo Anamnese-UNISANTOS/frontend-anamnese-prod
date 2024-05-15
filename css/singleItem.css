@@ -26,3 +26,7 @@
     align-items: flex-start;
     gap: 5px;
 }
+
+.titulo-etapas {
+    text-align: center;
+}

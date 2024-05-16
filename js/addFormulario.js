@@ -27,7 +27,9 @@ function listarPacientes() {
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
+  x[n].style.display = "flex";
+  x[n].style.flexDirection = "column";
+  x[n].style.gap = "10px";
   // ... and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
@@ -35,9 +37,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "Enviar";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Próximo";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)

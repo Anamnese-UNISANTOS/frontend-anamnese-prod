@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="./css/singleItem.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.js" defer></script>
     <script src="./js/globalScript.js" defer></script>
     <script src="./js/singlePaciente.js" defer></script>
-    <script src="./js/bootstrap.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="div-header">
-            <span id="headerUserName"></span>
+            <span id="headerusuarioNome"></span>
             <span>|</span>
             <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon" class="clickable">
                 <path fill="#0079BF"
@@ -81,16 +81,15 @@
             </div>
             <div class="div-tabela">
                 <table class="table caption-top table-bordered table-hover">
-                    <caption>Formulários de </caption>
+                    <caption>Anamneses de <span id="captionName"></span></caption>
                     <thead>
                         <tr>
                             <th scope="col">Código</th>
-                            <th scope="col">Tipo de Formulário</th>
                             <th scope="col">Paciente</th>
-                            <th scope="col">Última Atualização</th>
+                            <th scope="col">Criado Em</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tabela-tbody">
                     </tbody>
                 </table>
             </div>

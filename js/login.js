@@ -1,11 +1,10 @@
-endpoint = "auth/login";
 const formLogin = document.getElementById("formLogin");
 const fMatricula = document.getElementById("matricula");
 const fSenha = document.getElementById("senha");
 
 function fazerLogin() {
     let forbidden = false;
-    fetch(urlApi + endpoint, {
+    fetch(urlApi + endpointAuth, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -20,8 +19,9 @@ function fazerLogin() {
             return response.json();
         })
         .then(data => {
+            localStorage.setItem("usuarioId", data.usuarioId);
+            localStorage.setItem("usuarioNome", data.usuarioNome);
             localStorage.setItem("jwtToken", data.token);
-            localStorage.setItem("userName", data.userName);
             window.location.href = "pacientes.html";
         })
         .catch(() => {

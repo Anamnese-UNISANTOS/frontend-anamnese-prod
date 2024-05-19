@@ -1,20 +1,26 @@
-const urlApi = "https://backend-anamnese.onrender.com/"
-let endpoint = "";
+const urlApi = "https://backend-anamnese.onrender.com"
+const endpointPacientes = "pacientes";
+const endpointUsuarios = "usuarios";
+const endpointAuth = "auth/login";
+const endpointAnamneses = "anamneses";
+const usuarioId = localStorage.getItem("usuarioId");
+const usuarioNome = localStorage.getItem("usuarioNome");
 const token = localStorage.getItem("jwtToken");
-const userName = localStorage.getItem("userName");
 const goodWarning = document.getElementById("goodWarning");
+const goodWarningPass = document.getElementById("goodWarningPass");
+const badWarningPass = document.getElementById("badWarningPass");
 const badWarning = document.getElementById("badWarning");
 const fallback = document.getElementById("fallback");
 const tbody = document.querySelector(".tabela-tbody");
 const usersTab = document.querySelector(".usersTab");
 const header = document.querySelector("header");
-const headerUserName = document.getElementById("headerUserName");
+const headerusuarioNome = document.getElementById("headerusuarioNome");
 
 function verificarAutenticacao() {
     if (!token) {
         logout();
     } else {
-        fetch(urlApi + "pacientes", {
+        fetch(urlApi + endpointPacientes, {
             headers: {
                 "Authorization": `${token}`
             }
@@ -31,9 +37,9 @@ function verificarAutenticacao() {
     }
 }
 
-function deletarItem(id) {
+function deletarItem(id, url) {
     return new Promise((resolve, reject) => {
-        fetch(urlApi + endpoint + "/" + id, {
+        fetch(urlApi + url + "/" + id, {
             headers: {
                 "Authorization": `${token}`
             },
@@ -54,7 +60,7 @@ function verificarAutenticacaoAdmin() {
     if (!token) {
         logout();
     } else {
-        fetch(urlApi + "usuarios", {
+        fetch(urlApi + endpointUsuarios, {
             headers: {
                 "Authorization": `${token}`
             }
@@ -95,7 +101,7 @@ function limparTabela() {
 }
 
 function hideUsersTab() {
-    fetch(urlApi + "usuarios", {
+    fetch(urlApi + endpointUsuarios, {
         headers: {
             "Authorization": `${token}`
         }
@@ -108,7 +114,7 @@ function hideUsersTab() {
 }
 
 function getHeaderData() {
-    headerUserName.textContent = userName;
+    headerusuarioNome.textContent = usuarioNome;
     hideUsersTab();
 }
 

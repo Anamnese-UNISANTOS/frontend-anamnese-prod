@@ -7,15 +7,15 @@
     <title>Gerenciar Usuários</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <script src="./js/globalScript.js" defer></script>
-    <script src="./js/gerenciar-usuarios.js" defer></script>
     <script src="./js/bootstrap.js" defer></script>
+    <script src="./js/globalScript.js" defer></script>
+    <script src="./js/gerenciarUsuarios.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="div-header">
-            <span id="headerUserName"></span>
+            <span id="headerusuarioNome"></span>
             <span>|</span>
             <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon" class="clickable">
                 <path fill="#0079BF"
@@ -77,17 +77,17 @@
                         <div class="modal-body">
                             <form class="formAddUsuario needs-validation" novalidate>
                                 <div class="mb-3">
-                                    <label for="nome" class="form-label">Nome</label>
+                                    <label for="nome" class="form-label" >Nome <span class="required">*</span></label>
                                     <input type="text" class="form-control" id="nome" required>
                                     <div class="invalid-feedback">Campo obrigatório.</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="matricula" class="form-label">Matrícula</label>
+                                    <label for="matricula" class="form-label">Matrícula <span class="required">*</span></label>
                                     <input type="text" class="form-control" id="matricula" required>
                                     <div class="invalid-feedback">Campo obrigatório.</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="senha" class="form-label">Senha</label>
+                                    <label for="senha" class="form-label">Senha <span class="required">*</span></label>
                                     <input type="password" class="form-control" id="senha" required>
                                     <div class="invalid-feedback">Campo obrigatório.</div>
                                 </div>

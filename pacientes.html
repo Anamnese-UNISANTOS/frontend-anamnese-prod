@@ -7,15 +7,15 @@
     <title>Pacientes</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.js" defer></script>
     <script src="./js/globalScript.js" defer></script>
     <script src="./js/pacientes.js" defer></script>
-    <script src="./js/bootstrap.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="div-header">
-            <span id="headerUserName"></span>
+            <span id="headerusuarioNome"></span>
             <span>|</span>
             <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon" class="clickable">
                 <path fill="#0079BF"
@@ -75,12 +75,12 @@
                         <div class="modal-body">
                             <form class="formAddPaciente needs-validation" novalidate>
                                 <div class="mb-3">
-                                    <label for="nome" class="form-label">Nome Completo</label>
+                                    <label for="nome" class="form-label">Nome Completo <span class="required">*</span></label>
                                     <input type="text" class="form-control" id="nome" required>
                                     <div class="invalid-feedback">Campo obrigatório.</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="sexo" class="form-label">Sexo</label>
+                                    <label for="sexo" class="form-label">Sexo <span class="required">*</span></label>
                                     <select class="form-select" required aria-label="sexo-select" id="sexo">
                                         <option selected disabled value="">Selecione o sexo</option>
                                         <option value="masculino">Masculino</option>
@@ -90,7 +90,7 @@
                                     <div class="invalid-feedback">Selecione uma opção válida.</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="dataNasc" class="form-label">Data de Nascimento</label>
+                                    <label for="dataNasc" class="form-label">Data de Nascimento <span class="required">*</span></label>
                                     <input type="date" class="form-control" id="dataNasc" min="1910-01-01" required>
                                     <div class="invalid-feedback">Insira uma data válida.</div>
                                 </div>

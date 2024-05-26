@@ -25,19 +25,15 @@ function listarPacientes() {
                 colunaPaciente.textContent = `${paciente.nome}`
                 itemTabela.appendChild(colunaPaciente);
                 const colunaAt = document.createElement("td");
-                const dataValue = paciente.criadoEm;
-                const partes = dataValue.split("-");
-                const dataFormatada = partes[2] + "/" + partes[1] + "/" + partes[0];
-                colunaAt.textContent = dataFormatada;
+                const dataValue = formatDate(paciente.criadoEm);
+                colunaAt.textContent = dataValue;
                 itemTabela.appendChild(colunaAt);
-            });
-            let itensTabela = document.querySelectorAll(".itemTabela");
-            itensTabela.forEach((paciente) => {
-                paciente.addEventListener("click", () => {
+
+                itemTabela.addEventListener("click", () => {
                     localStorage.setItem("pacienteId", paciente.id);
                     window.location.href = "paciente.html";
                 })
-            })
+            });
         })
         .catch(error => {
             console.error(error);

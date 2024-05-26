@@ -39,20 +39,16 @@ function listarUsuarios() {
                 const colunaTipo = document.createElement('td');
                 colunaTipo.textContent = roles[usuario.role];
                 itemTabela.appendChild(colunaTipo);
-                const colunaAt = document.createElement('td');
-                const dataValue = usuario.criadoEm;
-                const partes = dataValue.split("-");
-                const dataFormatada = partes[2] + "/" + partes[1] + "/" + partes[0];
-                colunaAt.textContent = dataFormatada;
+                const colunaAt = document.createElement("td");
+                const dataValue = formatDate(usuario.criadoEm);
+                colunaAt.textContent = dataValue;
                 itemTabela.appendChild(colunaAt);
-            });
-            let itensTabela = document.querySelectorAll(".itemTabela");
-            itensTabela.forEach((usuario) => {
-                usuario.addEventListener("click", () => {
+                
+                itemTabela.addEventListener("click", () => {
                     localStorage.setItem("usuarioIdEdit", usuario.id);
                     window.location.href = "usuario.html";
                 })
-            })
+            });
         })
         .catch(error => {
             console.error(error);

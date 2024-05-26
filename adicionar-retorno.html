@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Formulário</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/anamnese.css">
+    <link rel="stylesheet" href="./css/addAnamnese.css">
+    <script src="./js/bootstrap.js" defer></script>
+    <script src="./js/globalScript.js" defer></script>
+    <script src="./js/addRetorno.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="div-header">
+            <span id="headerusuarioNome"></span>
+            <span>|</span>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon"
+                class="clickable">
+                <path fill="#0079BF"
+                    d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z">
+                </path>
+            </svg>
+        </div>
+        <div class="div-tabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="pacientes.html">Pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="formularios.html">Formulários</a>
+                </li>
+                <li class="usersTab nav-item">
+                    <a class="nav-link" aria-current="page" href="gerenciar-usuarios.html">Gerenciar Usuários</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="div-principal">
+        <img src="./img/unisantos-logo.png" alt="Logo Unisantos" width="233px">
+        <div class="div-conteudo">
+            <form id="regForm" class="formAddRetorno needs-validation" novalidate>
+
+                <div class="tab">
+
+                    <div class="header-tab">
+                        <h1 class="fs-5">Adicionar Retorno</h1>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="pacienteId" class="form-label">Paciente <span class="required">*</span></label>
+                        <input type="text" class="form-select" list="pacienteSelect" id="pacienteId" name="pacienteId"
+                            placeholder="Selecione um paciente" required>
+                        <datalist id="pacienteSelect">
+                        </datalist>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label" for="retorno">Retorno <span class="required">*</span></label>
+                        <input name="retorno" type="number" class="form-control" id="retorno" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="metasUltimasConsultas">Quais metas foram estabelecidas na última
+                            consulta?</label>
+                        <input name="metasUltimasConsultas" type="text" class="form-control" id="metasUltimasConsultas"
+                            rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="comentariosObservacao">Comentários/Observação</label>
+                        <input name="comentariosObservacao" type="text" class="form-control" id="comentariosObservacao"
+                            rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="metasForamCumpridas">Do que foi estabelecido na última consulta,
+                            as metas
+                            estabelecidas foram cumpridas?</label>
+                        <select class="form-select" id="metasForamCumpridas" name="metasForamCumpridas">
+                            <option selected disabled value="">Selecione uma opção</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                            <option value="mais_ou_menos">Mais ou Menos</option>
+                        </select>
+                    </div>
+                    <div class="container text-center mb-4 p-3 rounded border">
+                        <div class="mb-4">De 0 a 10, dê uma nota ao seu desempenho no cumprimento das metas desde a
+                            última consulta</div>
+                        <div class="row mb-4">
+                            <div class="col">
+                                1
+                            </div>
+                            <div class="col">
+                                2
+                            </div>
+                            <div class="col">
+                                3
+                            </div>
+                            <div class="col">
+                                4
+                            </div>
+                            <div class="col">
+                                5
+                            </div>
+                            <div class="col">
+                                6
+                            </div>
+                            <div class="col">
+                                7
+                            </div>
+                            <div class="col">
+                                8
+                            </div>
+                            <div class="col">
+                                9
+                            </div>
+                            <div class="col">
+                                10
+                            </div>
+                        </div>
+                        <div class="row mb-4 radioInput" radioInput-name="desempenhoCumprimentoMetas">
+                            <div class="col">
+                                <input class=" form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas1" value="1">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas2" value="2">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas3" value="3">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas4" value="4">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas5" value="5">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas6" value="6">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas7" value="7">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas8" value="8">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas9" value="9">
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input" type="radio" name="desempenhoCumprimentoMetas"
+                                    id="desempenhoCumprimentoMetas10" value="10">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="motivoAssinaladoCumprimentoMetas">Descreva o motivo assinalado no
+                            cumprimento das
+                            metas</label>
+                        <input name="motivoAssinaladoCumprimentoMetas" type="text" class="form-control"
+                            id="motivoAssinaladoCumprimentoMetas" rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="comoSentiuMudancaHabitos">Como você se sentiu com as mudanças de
+                            hábito?</label>
+                        <input name="comoSentiuMudancaHabitos" type="text" class="form-control"
+                            id="comoSentiuMudancaHabitos" rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="adaptacaoMudancaHabitos">Como se adaptou às mudanças de
+                            hábitos?</label>
+                        <input name="adaptacaoMudancaHabitos" type="text" class="form-control"
+                            id="adaptacaoMudancaHabitos" rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="motivosDificuldadeAdaptacao">Caso tenha tido alguma dificuldade
+                            ou não tenha
+                            conseguido se adaptar às metas propostas, por favor relate brevemente, quais os principais
+                            motivos?</label>
+                        <input name="motivosDificuldadeAdaptacao" type="text" class="form-control"
+                            id="motivosDificuldadeAdaptacao" rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="sentePrecisaMelhorarAlimentacao">O que sente que ainda precisa
+                            melhorar quanto à sua
+                            alimentação?</label>
+                        <input name="sentePrecisaMelhorarAlimentacao" type="text" class="form-control"
+                            id="sentePrecisaMelhorarAlimentacao" rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="habitoIntestinal">Quanto ao seu hábito intestinal</label>
+                        <input name="habitoIntestinal" type="text" class="form-control" id="habitoIntestinal"
+                            rows="3"></input>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="atvFisica">Atividade Física</label>
+                        <select class="form-select" id="atvFisica" name="atvFisica">
+                            <option selected disabled value="">Selecione uma opção</option>
+                            <option value="manteve_o_que_ja_fazia">Manteve o que já fazia</option>
+                            <option value="aumentei_a_frequencia_intensidade">Aumentei a frequência/intensidade</option>
+                            <option value="ainda_nao_consegui_praticar">Ainda não consegui praticar</option>
+                            <option value="nao_iniciei_e_nao_pretendo_iniciar">Não iniciei e não pretendo iniciar
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="metasProximoRetorno">Metas para o Próximo Retorno</label>
+                        <input name="metasProximoRetorno" type="text" class="form-control" id="metasProximoRetorno"
+                            rows="3"></input>
+                    </div>
+
+                </div>
+
+                <div class="tab">
+
+                    <div class="header-tab">
+                        <h2 class="fs-5">Medidas Corporais</h2>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label" for="pesoAtual" class="form-label">Peso atual (kg)</label>
+                        <input type="number" id="pesoAtual" name="pesoAtual" class="form-control" min="0" step="0.1">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label" for="imc" class="form-label">IMC (kg/m²)</label>
+                        <input type="number" id="imc" name="imc" class="form-control" min="0" step="0.1">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label" for="circunferenciaAbdominal" class="form-label">Circunferência
+                            Abdominal</label>
+                        <input type="number" id="circunferenciaAbdominal" name="circunferenciaAbdominal"
+                            class="form-control" min="0" step="0.1">
+                    </div>
+
+                </div>
+
+                <div class="tab">
+
+                    <div class="header-tab">
+                        <h2 class="fs-5">Retorno com Bioimpedância</h2>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label" for="valoresBioimpedancia">Descrever os valores da
+                            Bioimpedância</label>
+                        <textarea class="form-control" id="valoresBioimpedancia" name="valoresBioimpedancia"
+                            class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label" for="observacoesBioimpedancia">Observações</label>
+                        <textarea class="form-control id=" observacoesBioimpedancia" name="observacoesBioimpedancia"
+                            class="form-control"></textarea>
+                    </div>
+
+                </div>
+
+                <div>
+                    <span id="goodWarning"></span>
+                    <span id="badWarning"></span>
+                    <div class="div-step-buttons mt-3">
+                        <button type="button" class="btn btn-secondary" id="prevBtn"
+                            onclick="prevTab()">Anterior</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn"
+                            onclick="nextTab(cadastrarRetorno)">Próximo</button>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

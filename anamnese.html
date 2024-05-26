@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/anamnese.css">
-    <link rel="stylesheet" href="./css/addAnamnese.css">
     <script src="./js/bootstrap.js" defer></script>
     <script src="./js/globalScript.js" defer></script>
-    <script src="./js/addAnamnese.js" defer></script>
+    <script src="./js/singleAnamnese.js" defer></script>
 </head>
 
 <body>
@@ -50,7 +49,10 @@
                 <div class="tab">
 
                     <div class="header-tab">
-                        <h1 class="fs-5">Adicionar Anamnese</h1>
+                        <span>Criado por <span id="criadoPor"></span></span>
+                        <h1 class="fs-5">Anamnese de <span id="pacienteNome"></span></h1>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#modalDeletarAnamnese">Deletar</button>
                     </div>
 
                     <div class="mb-4">
@@ -64,7 +66,7 @@
                     <div class="mb-4">
                         <label for="escolaridade" class="form-label">Escolaridade</label>
                         <select id="escolaridade" name="escolaridade" class="form-select">
-                            <option selected disabled value="">Selecione uma escolaridade</option>
+                            <option selected disabled value="">Selecione a escolaridade</option>
                             <option value="fundamental_completo">Fundamental Completo</option>
                             <option value="ensino_medio_completo">Ensino Médio Completo</option>
                             <option value="ensino_superior_incompleto">Ensino Superior Incompleto</option>
@@ -121,7 +123,7 @@
                     <div class="mb-4">
                         <label for="rendaFamiliar" class="form-label">Renda Familiar</label>
                         <select id="rendaFamiliar" name="rendaFamiliar" class="form-select">
-                            <option selected disabled value="">Selecione uma renda familiar</option>
+                            <option selected disabled value="">Selecione a renda familiar</option>
                             <option value="menos_de_1_salario_minimo">Menos de 1 salário mínimo</option>
                             <option value="de_1_a_2_salarios_minimos">De 1 a 2 salários mínimos</option>
                             <option value="de_3_a_5_salarios_minimos">De 3 a 5 salários mínimos</option>
@@ -176,7 +178,7 @@
                     <div class="mb-4">
                         <label for="frequenciaEvacuacao" class="form-label">Frequência de Evacuação</label>
                         <select id="frequenciaEvacuacao" name="frequenciaEvacuacao" class="form-select">
-                            <option selected disabled value="">Selecione uma frequência de evacuação</option>
+                            <option selected disabled value="">Selecione a frequência de evacuação</option>
                             <option value="diaria">Diária</option>
                             <option value="alternada">Alternada</option>
                             <option value="tres_vezes_por_semana">Três vezes por semana</option>
@@ -2784,7 +2786,7 @@
                             estressado(a), ansioso(a) ou triste?</label>
                         <select class="form-select" aria-label="necessidadeComerEstressadoAnsiosoTriste"
                             name="necessidadeComerEstressadoAnsiosoTriste" id="necessidadeComerEstressadoAnsiosoTriste">
-                            <option selected disabled value="">Selecione uma opção</option>
+                            <option selected disabled value="">Selecione a opção</option>
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
                             <option value="as_vezes">As vezes</option>
@@ -2796,7 +2798,7 @@
                             refeições sozinho(a) ou acompanhado(a)?</label>
                         <select class="form-select" aria-label="realizaRefeicoesSozinhoAcompanhado"
                             name="realizaRefeicoesSozinhoAcompanhado" id="realizaRefeicoesSozinhoAcompanhado">
-                            <option selected disabled value="">Selecione uma opção</option>
+                            <option selected disabled value="">Selecione a opção</option>
                             <option value="sozinho">Sozinho</option>
                             <option value="acompanhado">Acompanhado</option>
                         </select>
@@ -2821,7 +2823,7 @@
                             consolar" comendo algo após um acontecimento ruim/estressante?</label>
                         <select class="form-select" aria-label="necessidadeConsoloAlimentar"
                             name="necessidadeConsoloAlimentar" id="necessidadeConsoloAlimentar">
-                            <option selected disabled value="">Selecione uma opção</option>
+                            <option selected disabled value="">Selecione a opção</option>
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
                             <option value="as_vezes">As Vezes</option>
@@ -2833,7 +2835,7 @@
                             que tenha restado comida no prato?</label>
                         <select class="form-select" aria-label="dificuldadePararDeComer" name="dificuldadePararDeComer"
                             id="dificuldadePararDeComer">
-                            <option selected disabled value="">Selecione uma opção</option>
+                            <option selected disabled value="">Selecione a opção</option>
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
                             <option value="as_vezes">As Vezes</option>
@@ -2845,7 +2847,7 @@
                             fisiológica?</label>
                         <select class="form-select" aria-label="frequenciaFomeFisiologica"
                             name="frequenciaFomeFisiologica" id="frequenciaFomeFisiologica">
-                            <option selected disabled value="">Selecione uma opção</option>
+                            <option selected disabled value="">Selecione a opção</option>
                             <option value="Apenas nos horários das refeições">Apenas nos horários das refeições</option>
                             <option value="Às vezes nos intervalos entre as refeições">Às vezes nos intervalos entre as
                                 refeições</option>
@@ -2859,7 +2861,7 @@
                             necessidade emocional de comer alguma coisa?</label>
                         <select class="form-select" aria-label="frequenciaNecessidadeEmocionalComer"
                             name="frequenciaNecessidadeEmocionalComer" id="frequenciaNecessidadeEmocionalComer">
-                            <option selected disabled value="">Selecione uma opção</option>
+                            <option selected disabled value="">Selecione a opção</option>
                             <option value="Não há">Não há</option>
                             <option value="Por ansiedade">Por ansiedade</option>
                             <option value="Por tristeza">Por tristeza</option>
@@ -3224,7 +3226,7 @@
                     <div class="div-step-buttons mt-3">
                         <button type="button" class="btn btn-secondary" id="prevBtn"
                             onclick="prevTab()">Anterior</button>
-                        <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextTab(cadastrarAnamnese)">Próximo</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextTab(atualizarAnamnese)">Próximo</button>
                     </div>
                 </div>
 
@@ -3240,6 +3242,28 @@
                 </div>
 
             </form>
+        </div>
+    </div>
+
+    <!-- Modal Deletar Anamnese -->
+    <div class="modal fade" id="modalDeletarAnamnese" tabindex="-1" aria-labelledby="modalDeletarAnamneseLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalDeletarAnamneseLabel">Deletar Anamnese</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja deletar essa anamnese?</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="div-modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-danger" id="botaoDeletar">Deletar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

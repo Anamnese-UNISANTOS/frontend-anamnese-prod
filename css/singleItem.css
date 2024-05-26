@@ -1,6 +1,6 @@
 .div-info {
     background-color: #ffffff;
-    padding: 40px;
+    padding: 20px 40px 40px 40px;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -14,15 +14,17 @@
     color: #ffffff;
 }
 
-.div-status-acoes {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
 .div-atualizar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
+}
+
+.modal-header {
+    background-color: var(--bs-red);
+}
+
+#modalAlterarSenha .modal-header{
+    background-color: var(--bs-blue);
 }

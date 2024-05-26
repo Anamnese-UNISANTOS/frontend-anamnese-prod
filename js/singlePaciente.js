@@ -24,40 +24,44 @@ function consultarPaciente() {
         })
 }
 
-function listarAnamnesesDoPaciente() {
-    fetch(urlApi + endpointAnamneses + "/" + endpointPacientes + "/" + pacienteId, {
+function listarFormulariosDoPaciente() {
+    fetch(urlApi + endpointFormularios + "/" + endpointPacientes + "/" + pacienteId, {
         headers: {
             "Authorization": `${token}`
         }
     })
         .then(response => response.json())
         .then(data => {
-            data.forEach(anamnese => {
+            data.forEach(formulario => {
                 const itemTabela = document.createElement("tr");
                 itemTabela.classList.add("itemTabela");
                 itemTabela.classList.add("clickable");
-                itemTabela.id = anamnese.id;
+                itemTabela.id = formulario.id;
                 tbody.appendChild(itemTabela);
                 const colunaId = document.createElement("th");
-                colunaId.textContent = `${anamnese.id}`
+                colunaId.textContent = `${formulario.id}`
                 itemTabela.appendChild(colunaId);
+                const colunaTipoForm = document.createElement("td");
+                colunaTipoForm.textContent = `${formulario.tipoFormulario}`
+                itemTabela.appendChild(colunaTipoForm);
                 const colunaPaciente = document.createElement("td");
-                colunaPaciente.textContent = `${anamnese.pacienteNome}`
+                colunaPaciente.textContent = `${formulario.pacienteNome}`
                 itemTabela.appendChild(colunaPaciente);
                 const colunaAt = document.createElement("td");
-                const dataValue = anamnese.criadoEm;
-                const partes = dataValue.split("-");
-                const dataFormatada = partes[2] + "/" + partes[1] + "/" + partes[0];
-                colunaAt.textContent = dataFormatada;
+                const dataValue = formatDate(formulario.criadoEm);
+                colunaAt.textContent = dataValue;
                 itemTabela.appendChild(colunaAt);
-            });
-            let itensTabela = document.querySelectorAll(".itemTabela");
-            itensTabela.forEach((anamnese) => {
-                anamnese.addEventListener("click", () => {
-                    localStorage.setItem("anamneseId", anamnese.id);
-                    window.location.href = "anamnese.html";
+
+                itemTabela.addEventListener("click", () => {
+                    if (formulario.tipoFormulario == "Anamnese") {
+                        localStorage.setItem("anamneseId", formulario.id);
+                        window.location.href = "anamnese.html";
+                    } else {
+                        localStorage.setItem("retornoId", formulario.id);
+                        window.location.href = "retorno.html";
+                    }
                 })
-            })
+            });
         })
         .catch(error => {
             console.error(error);
@@ -123,4 +127,4 @@ botaoDeletar.addEventListener("click", async () => {
 
 verificarAutenticacao();
 consultarPaciente();
-listarAnamnesesDoPaciente();
+listarFormulariosDoPaciente();

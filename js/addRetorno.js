@@ -1,4 +1,4 @@
-const formAddAnamnese = document.querySelector(".formAddAnamnese");
+const formAddRetorno = document.querySelector(".formAddRetorno");
 const divStepButtons = document.querySelector(".div-step-buttons");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
@@ -6,12 +6,12 @@ const tabs = document.getElementsByClassName("tab");
 const fPacienteSelect = document.getElementById("pacienteSelect");
 let currentTab = 0;
 
-function cadastrarAnamnese() {
+function cadastrarRetorno() {
   const data = getData();
   let forbidden = false;
   return new Promise((resolve, reject) => {
-    if (validateForm(formAddAnamnese)) {
-      fetch(urlApi + endpointAnamneses, {
+    if (validateForm(formAddRetorno)) {
+      fetch(urlApi + endpointRetornos, {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `${token}`
@@ -24,7 +24,7 @@ function cadastrarAnamnese() {
             forbidden = true;
             return Promise.reject();
           }
-          goodWarning.textContent = "Anamnese cadastrada com sucesso!";
+          goodWarning.textContent = "Retorno cadastrada com sucesso!";
           resolve(response);
         })
         .catch(error => {
@@ -43,7 +43,7 @@ function cadastrarAnamnese() {
 
 function getData() {
   // Seleciona todos os inputs e checkboxes dentro do formulário
-  const inputs = document.querySelectorAll('.formAddAnamnese input, .formAddAnamnese select, .formAddAnamnese textarea');
+  const inputs = document.querySelectorAll('.formAddRetorno input, .formAddRetorno select, .formAddRetorno textarea');
   const data = { usuarioId: usuarioId, };
 
   // Itera sobre cada elemento e adiciona seu valor ao objeto data

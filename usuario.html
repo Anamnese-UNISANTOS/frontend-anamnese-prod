@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página do Usuário</title>
-    <link rel="stylesheet" href="./css/singleItem.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/singleItem.css">
     <script src="./js/bootstrap.js" defer></script>
     <script src="./js/globalScript.js" defer></script>
     <script src="./js/singleUsuario.js" defer></script>
@@ -18,7 +18,8 @@
         <div class="div-header">
             <span id="headerusuarioNome"></span>
             <span>|</span>
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon" class="clickable">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 512 512" width="16" height="16" id="exitIcon"
+                class="clickable">
                 <path fill="#0079BF"
                     d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z">
                 </path>
@@ -43,11 +44,12 @@
         <img src="./img/unisantos-logo.png" alt="Logo Unisantos" width="233px">
         <div class="div-conteudo">
             <div class="div-info">
-                <div class="div-status-acoes">
-                    <button type="button" class="botao-ativo">Ativo</button>
+                <div class="header-tab">
+                    <!-- <button type="button" class="botao-ativo">Ativo</button> -->
+                    <h1 class="fs-5">Usuário</h1>
                     <div class="div-acoes">
-                        <button class="btn btn-secondary">Inativar</button>
-                        <button class="btn btn-danger" data-bs-toggle="modal"
+                        <!-- <button class="btn btn-secondary">Inativar</button> -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#modalDeletarUsuario">Deletar</button>
                     </div>
                 </div>
@@ -74,10 +76,11 @@
             </div>
             <div class="div-tabela">
                 <table class="table caption-top table-bordered table-hover">
-                    <caption>Anamneses criadas por <span id="captionName"></span></caption>
+                    <caption>Formulários criados por <span id="captionName"></span></caption>
                     <thead>
                         <tr>
                             <th scope="col">Código</th>
+                            <th scope="col">Tipo de Formulário</th>
                             <th scope="col">Paciente</th>
                             <th scope="col">Criado Em</th>
                         </tr>
@@ -127,7 +130,8 @@
                             <input type="password" class="form-control" id="novaSenha">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Confirmar Nova Senha <span class="required">*</span></label>
+                            <label for="password" class="form-label">Confirmar Nova Senha <span
+                                    class="required">*</span></label>
                             <input type="password" class="form-control" id="novaSenhaConfirm">
                         </div>
                         <span id="goodWarningPass"></span>
@@ -135,7 +139,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="div-modal-footer">
-                        <button class="btn btn-danger">Cancelar</button>
+                        <button type="button" class="btn btn-secondary">Cancelar</button>
                         <button type="submit" class="btn btn-primary">Alterar</button>
                     </div>
                     </form>

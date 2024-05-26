@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página do Paciente</title>
-    <link rel="stylesheet" href="./css/singleItem.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/singleItem.css">
     <script src="./js/bootstrap.js" defer></script>
     <script src="./js/globalScript.js" defer></script>
     <script src="./js/singlePaciente.js" defer></script>
@@ -43,11 +43,10 @@
         <img src="./img/unisantos-logo.png" alt="Logo Unisantos" width="233px">
         <div class="div-conteudo">
             <div class="div-info">
-                <div class="div-status-acoes">
-                    <button type="button" class="botao-ativo">Ativo</button>
-                    <h1 class="h4">Paciente</h1>
+                <div class="header-tab">
+                    <h1 class="fs-5">Paciente</h1>
                     <div class="div-acoes">
-                        <button class="btn btn-danger" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                         data-bs-target="#modalDeletarPaciente">Deletar</button>
                     </div>
                 </div>
@@ -81,10 +80,11 @@
             </div>
             <div class="div-tabela">
                 <table class="table caption-top table-bordered table-hover">
-                    <caption>Anamneses de <span id="captionName"></span></caption>
+                    <caption>Formulários de <span id="captionName"></span></caption>
                     <thead>
                         <tr>
                             <th scope="col">Código</th>
+                            <th scope="col">Tipo de Formulário</th>
                             <th scope="col">Paciente</th>
                             <th scope="col">Criado Em</th>
                         </tr>
